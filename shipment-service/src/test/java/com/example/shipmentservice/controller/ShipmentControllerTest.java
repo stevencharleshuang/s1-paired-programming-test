@@ -29,16 +29,17 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(MockitoJUnitRunner.class)
 public class ShipmentControllerTest {
 
-    @Autowired
+//    @Autowired
     private MockMvc mockMvc;
+
+    @InjectMocks
+    ShipmentController shipmentController;
 
 //    @InjectMocks
     private Shipment shipment;
 
-    @InjectMocks
-    private ShipmentController shipmentController;
-
-    @MockBean
+//    @MockBean
+    @Mock
     private ShipmentService shipmentService;
 
     @Before
@@ -49,7 +50,7 @@ public class ShipmentControllerTest {
         shipment.setName("test name");
         shipment.setTrackingNumber(1L);
 
-//        mockMvc = MockMvcBuilders.standaloneSetup(shipmentController).build();
+        mockMvc = MockMvcBuilders.standaloneSetup(shipmentController).build();
     }
 
     @Test
