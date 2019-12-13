@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @FeignClient("shipment")
 public interface ShipmentClient {
 
-    @GetMapping("/shipment/{trackingnumber}")
+    @GetMapping("/{trackingnumber}")
     public ShipmentBean getShipmentByTrackingNumber(@PathVariable Long trackingNumber);
 
     @PostMapping("/addshipment")
