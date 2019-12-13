@@ -17,7 +17,7 @@ public class ShipmentController {
         return shipmentService.getShipmentByTrackingNumber(trackingNumber);
     }
 
-    @PostMapping("shipment/addshipment")
+    @PostMapping("/addshipment")
     public Shipment addShipment(@RequestBody Shipment shipment) {
         return shipmentService.addShipment(shipment);
     }

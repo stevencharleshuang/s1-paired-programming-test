@@ -11,13 +11,18 @@ public class Shipment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long shipmentId;
 
-    @Column
+    @Column(name = "name")
     private String name;
 
-    @Column
+    @Column(name = "tracking_number")
     private Long trackingNumber;
 
     public Shipment () { }
+
+    public Shipment(String name, Long trackingNumber) {
+        this.name = name;
+        this.trackingNumber = trackingNumber;
+    }
 
     public Long getId() {
         return shipmentId;
