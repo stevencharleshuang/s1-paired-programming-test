@@ -62,8 +62,8 @@ public class ShipmentControllerTest {
 
         MvcResult result = mockMvc
                 .perform(requestBuilder)
-//                .andExpect(status().isOk())
-//                .andExpect(content().json("{\"name\":\"test name\",\"trackingNumber\":1,\"id\":1}"))
+                .andExpect(status().isOk())
+                .andExpect(content().json("{\"name\":\"test name\",\"trackingNumber\":1,\"id\":1}"))
                 .andReturn();
 
         System.out.println(result.getResponse().getContentAsString());
