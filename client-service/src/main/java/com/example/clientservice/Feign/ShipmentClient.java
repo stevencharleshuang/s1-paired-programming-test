@@ -5,13 +5,14 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @FeignClient("shipment")
 public interface ShipmentClient {
 
-    @GetMapping("/{trackingnumber}")
+    @GetMapping("shipment/{trackingnumber}")
     public ShipmentBean getShipmentByTrackingNumber(@PathVariable Long trackingNumber);
 
-    @PostMapping("/addshipment")
-    public ShipmentBean addShipment(ShipmentBean shipment);
+    @PostMapping("shipment/addshipment")
+    public ShipmentBean addShipment(@RequestBody ShipmentBean shipment);
 }
